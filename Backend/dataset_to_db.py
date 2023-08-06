@@ -1,6 +1,12 @@
 import pandas as pd
 from mysql.connector import connect
 
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from the .env file
+load_dotenv()
+
 def create_db_and_tables(connection):
 	with connection.cursor() as cursor:
 		cursor.execute("CREATE DATABASE IF NOT EXISTS onboarding")
@@ -58,9 +64,29 @@ def load_data_into_db(connection):
 
 		connection.commit()
 
+# def main():
+# 	with connect(host = "localhost", user = "root") as connection:
+# 		create_db_and_tables(connection)
+# 		load_data_into_db(connection)
+
 def main():
-	with connect(host = "localhost", user = "root") as connection:
-		create_db_and_tables(connection)
-		load_data_into_db(connection)
+    # Get database credentials from environment variables
+    azure_server_name = os.getenv("DB_HOST")
+    azure_user_name = os.getenv("DB_USER")
+    azure_password = os.getenv("DB_PASS")
+    azure_database_name = os.getenv("DB_NAME")
+    azure_db_port = int(os.getenv("DB_PORT"))
+
+    # Establish connection to Azure Database
+    with connect(
+        host=azure_server_name,
+        user=azure_user_name,
+        password=azure_password,
+        database=azure_database_name,
+		port=azure_db_port,
+    ) as connection:
+        create_db_and_tables(connection)
+        load_data_into_db(connection)
+
 
 main()
