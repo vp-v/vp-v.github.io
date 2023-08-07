@@ -1,11 +1,6 @@
+import getpass
 import pandas as pd
 from mysql.connector import connect
-
-# import os
-# from dotenv import load_dotenv
-
-# # Load environment variables from the .env file
-# load_dotenv()
 
 def create_db_and_tables(connection):
 	with connection.cursor() as cursor:
@@ -39,7 +34,7 @@ def create_db_and_tables(connection):
 		connection.commit()
 
 def load_data_into_db(connection):
-	df = pd.read_csv("Onboarding/summary-residential-community-data.csv", sep = ";")
+	df = pd.read_csv("summary-residential-community-data.csv", sep = ";")
 	# As discussed by the team we only want the latest data since the user is going to be entering their most recent bill
 	df = df[df.year == 2022]
 
@@ -65,28 +60,8 @@ def load_data_into_db(connection):
 		connection.commit()
 
 def main():
-	with connect(host = "20.102.118.81", user = "sama0003") as connection:
+	with connect(host = "onboarding-ta21.mysql.database.azure.com", user = "lleyton", password = getpass.getpass()) as connection:
 		create_db_and_tables(connection)
 		load_data_into_db(connection)
-
-# def main():
-#     # Get database credentials from environment variables
-#     azure_server_name = os.getenv("DB_HOST")
-#     azure_user_name = os.getenv("DB_USER")
-#     azure_password = os.getenv("DB_PASS")
-#     azure_database_name = os.getenv("DB_NAME")
-#     azure_db_port = int(os.getenv("DB_PORT"))
-
-#     # Establish connection to Azure Database
-#     with connect(
-#         host=azure_server_name,
-#         user=azure_user_name,
-#         password=azure_password,
-#         database=azure_database_name,
-# 		port=azure_db_port,
-#     ) as connection:
-#         create_db_and_tables(connection)
-#         load_data_into_db(connection)
-
 
 main()
