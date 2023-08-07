@@ -5,7 +5,7 @@ function calculate() {
     let parsedInput2 = parseFloat(input2);
 
     if (isNaN(parsedInput1)||isNaN(parsedInput2)) {
-      window.alert("Please enter number only.");
+      window.alert("Please enter number only. And type in all the fields.");
     } else {
       let calculatedValue = (parsedInput1 + parsedInput2)*8.75*0.0005;
       window.location.href = "result.html?value=" + calculatedValue;

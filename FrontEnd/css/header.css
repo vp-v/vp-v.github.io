@@ -6,14 +6,14 @@ header button{
     font-family: 'Bangers';
     top: 10px;
     left: 10px;
-    border: 0.2vw white double;
+    border: 0.3vw white double;
     border-radius: 0.4vw;
     padding: 0.3vw;
     background-color: transparent;
     color: lightgray;
     transition: all 0.2s;
     cursor: pointer;
-    font-size: 1vw;
+    font-size: 1.3vw;
 }
 
 header img{
