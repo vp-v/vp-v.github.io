@@ -1,7 +1,10 @@
 // Get the value from the URL query parameter
-var urlParams = new URLSearchParams(window.location.search);
-var calculatedValue = urlParams.get("value");
+let urlParams = new URLSearchParams(window.location.search);
+let calculatedValue = urlParams.get("value");
 
 // Display the calculated result on the page
-var resultElement = document.getElementById("Result");
+let resultElement = document.getElementById("Result");
 resultElement.textContent = calculatedValue;
+
+let treeElement = document.getElementById("tree");
+treeElement.textContent = calculatedValue*0.0005*40;
