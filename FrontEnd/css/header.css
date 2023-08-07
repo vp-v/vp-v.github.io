@@ -1,0 +1,41 @@
+header{
+    position: fixed;
+}
+
+header button{
+    font-family: 'Bangers';
+    top: 10px;
+    left: 10px;
+    border: 0.2vw white double;
+    border-radius: 0.4vw;
+    padding: 0.3vw;
+    background-color: transparent;
+    color: lightgray;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 1vw;
+}
+
+header img{
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 20px;
+    right: -30px;
+    bottom: 5px;
+    transform: rotate(35deg)
+}
+
+header:hover img{
+    opacity: 1;
+}
+
+header:hover button{
+    filter: brightness(110%);
+    box-shadow: 0.5px 0.5px lightgray;
+}
+
+header:active button{
+    filter: brightness(180%);
+    border: inset;
+}

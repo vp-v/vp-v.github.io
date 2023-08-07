@@ -8,8 +8,32 @@ class template extends HTMLElement{
             <link rel="stylesheet" href="../css/box.css">
             <link rel="stylesheet" href="../css/general.css">
             <link rel="stylesheet" href="../css/button.css">
+            <link rel="stylesheet" href="../css/header.css">
         `;
     }
 }
 
 customElements.define('my-template', template);
+
+
+class template2 extends HTMLElement{
+    connectedCallback(){
+        this.innerHTML = `
+            <header>
+                <button onclick="redirectHom()">home</button>
+                <div>
+                    <img src="../images/hearts.png"> 
+                </div>
+            </header>
+        `;
+    }
+}
+
+customElements.define('my-template2', template2);
+
+
+
+
+function redirectHom(){
+    location.replace('home.html')
+}
