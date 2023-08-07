@@ -2,12 +2,17 @@
 let urlParams = new URLSearchParams(window.location.search);
 let calculatedValue = urlParams.get("value");
 
+calculatedValue = Number(calculatedValue);
+calculatedValue = calculatedValue.toFixed(2);
+tree = calculatedValue*40;
+tree = tree.toFixed(2);
+
 // Display the calculated result on the page
 let resultElement = document.getElementById("Result");
 resultElement.textContent = calculatedValue;
 
 let treeElement = document.getElementById("tree");
-treeElement.textContent = calculatedValue*40;
+treeElement.textContent = tree;
 
 let usage = document.getElementById("usage");
 if (calculatedValue <= 12) {
