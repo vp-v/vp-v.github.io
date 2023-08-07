@@ -1,0 +1,104 @@
+.content-box{
+    margin-top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: lightgray;
+    border-radius: 5vw;
+    padding: 3vw;
+    border-style: solid;
+    background-color: black;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.content-box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-box3{
+    margin-top: 70px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    border-color: lightgray;
+    border-radius: 5vw;
+    padding: 3vw;
+    border-style: solid;
+    background-color: black;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.content-box4{
+    display: bock;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.electricity, .gas{
+    margin-top: 20px;
+    border-radius: 4vw;
+    height: 6vw;
+    display: block;
+    width: 35vw;
+    margin-bottom: 20px;
+    border-color: lightgray;
+    border-style: double;
+    font-family: 'Quicksand';
+    font-size: 3vw;
+    text-align: center;
+    transition: all 0.2s;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.electricity::placeholder, .gas::placeholder{
+    font-family: 'Quicksand';
+    font-size: 3vw;
+}
+
+.electricity:hover, .gas:hover{
+    box-shadow: inset 1vw 1vw 1vw rgba(0, 0, 0, 0.05), 2px 2px lightgray;
+}
+
+.electricity:focus, .gas:focus{
+    outline-color: lightskyblue;
+    outline-width: 0.5vw;
+    outline-style: solid;
+}
+
+.intro{
+    font-family: 'Quicksand';
+    font-size: 4vw;
+    color: white;
+    text-align: center;
+    margin: 3vw;
+}
+
+.intro emp{
+    color: lightcoral;
+}
+
+.intro emp1{
+    color: lightskyblue;
+}
+
+.selection{
+    margin-top: 20px;
+    border-radius: 4vw;
+    height: 6vw;
+    display: block;
+    width: 35vw;
+    margin-bottom: 20px;
+    border-color: lightgray;
+    border-style: double;
+    font-family: 'Quicksand';
+    color: rgb(55, 158, 222);
+    font-size: 3vw;
+    text-align: center;
+    transition: all 0.2s;
+    box-shadow: inset 1px 1px 1px rgba(0, 0, 0, 0.05);
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <my-template></my-template>
+</head>
+
+<body>
+    <main>
+        <div class="heading">
+            Carbonfootprint Calculator
+        </div>
+
+        <div class="content-box">
+            <div class="input-box">
+                <input class="electricity" id="ele" type="text" placeholder="electricity(kWh monthly)">
+                <input class="gas" id="ga" type="text" placeholder="gas(Gj monthly)">
+            </div>
+
+            <div class="start-button">
+                <button onclick="calculate()">Calculate</button>
+                <div>
+                    <img src="../images/hearts.png"> 
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="../js/myTemplate.js"></script>
+    <script src="../js/calculate.js"></script>
+</body>
+
+</html>
