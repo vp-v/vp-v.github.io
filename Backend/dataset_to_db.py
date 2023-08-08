@@ -1,3 +1,4 @@
+# dataset_to_db.py
 import getpass
 import pandas as pd
 from mysql.connector import connect
@@ -58,9 +59,32 @@ def load_data_into_db(connection):
 
 		connection.commit()
 
+# mysql -h onboarding-ta21.mysql.database.azure.com -u lleyton -p
+# ta21-caseyemissions
 def main():
 	with connect(host = "onboarding-ta21.mysql.database.azure.com", user = "lleyton", password = getpass.getpass()) as connection:
 		create_db_and_tables(connection)
 		load_data_into_db(connection)
 
-main()
+if __name__ == "__main__":
+    main()
+    
+
+# 	SELECT * FROM emissions;
+# +---------------------+-------------------------------------+----------+
+# | total_co2_emissions | avg_emissions_per_customer_per_year | postcode |
+# +---------------------+-------------------------------------+----------+
+# |            13062677 |                                  29 | 3156     |
+# |            37801674 |                                  16 | 3177     |
+# |            63189513 |                                  19 | 3802     |
+# |            72959492 |                                  17 | 3803     |
+# |            56975288 |                                  26 | 3804     |
+# |            74421495 |                                  17 | 3805     |
+# |            87311243 |                                  18 | 3806     |
+# |            16786510 |                                  22 | 3807     |
+# |           107451247 |                                  21 | 3912     |
+# |            26820742 |                                  20 | 3975     |
+# |            85705644 |                                  17 | 3976     |
+# |           155836905 |                                  17 | 3977     |
+# |            52349680 |                                  16 | 3978     |
+# +---------------------+-------------------------------------+----------+
