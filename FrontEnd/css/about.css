@@ -1,3 +1,49 @@
-.img{
-    
+.teamInfo{
+    font-family: 'Quicksand';
+    color: white;
+    padding-top: 120px;
+    display: block;
+    padding-left: 80px;
+}
+
+.personalInfo{
+    font-family: 'Quicksand';
+    font-size: 1.7vw;
+    color: white;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.teamInfo img{
+    width: 4vw;
+    border-radius: 4vw;
+}
+
+/* .teamInfo m1{
+    color: lightcoral;
+}
+
+.teamInfo m2{
+    color: lightblue;
+}
+
+.teamInfo m3{
+    color: lightyellow;
+}
+
+.teamInfo m4{
+    color: palegreen;
+}
+
+.teamInfo m5{
+    color: whi;
+} */
+
+.teamInfo m6{
+    margin-top: 4vw;
+    margin-left: 2vw;
+    font-family: Bangers;
+    color: wheat;
+    font-size: 2.5vw;
 }
