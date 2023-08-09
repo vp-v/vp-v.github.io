@@ -40,12 +40,12 @@ def load_data_into_db(connection):
 	# We remove postcode 3980 because its gas data is missing - almost all the cells are zeroes
 	df = df[(df.year == 2022) & (df.postcode != 3980)]
 
-	df_elec = df[df.emission_source == "Electricity"].reset_index(drop = True).sort_values(["postcode"], inplace = False)
-	df_gas = df[df.emission_source == "Gas"].reset_index(drop = True).sort_values(["postcode"], inplace = False)
+	df_elec = df[df.emission_source == "Electricity"].sort_values(["postcode"], inplace = False).reset_index(drop = True)
+	df_gas = df[df.emission_source == "Gas"].sort_values(["postcode"], inplace = False).reset_index(drop = True)
 
 	# The total & average electricity + gas CO2 emissions are added as an extra column to the electricity table
 	df_elec["total_elec_and_gas_co2_emissions"] = df_elec.total_emissions_kg_co2e + df_gas.total_emissions_kg_co2e
-	df_elec["avg_elec_and_gas_co2_emissions"] = df_elec.average_emissions_energy_per_customer_kg_co2e_per_day + df_gas.average_emissions_energy_per_customer_kg_co2e_per_day
+	df_elec["avg_elec_and_gas_co2_emissions"] = df_elec.average_emissions_per_customer_kg_co2e + df_gas.average_emissions_per_customer_kg_co2e
 
 	with connection.cursor() as cursor:
 		# Adding suburb data when looping through the electricity rows ensures we only do it once
