@@ -9,6 +9,7 @@ class template extends HTMLElement{
             <link rel="stylesheet" href="../css/general.css">
             <link rel="stylesheet" href="../css/button.css">
             <link rel="stylesheet" href="../css/header.css">
+            <link rel="stylesheet" href="../css/about.css">
         `;
     }
 }
@@ -24,6 +25,10 @@ class template2 extends HTMLElement{
                 <div>
                     <img src="../images/hearts.png"> 
                 </div>
+                <button onclick="redirectAbout()">About</button>
+                <div>
+                    <img src="../images/hearts.png"> 
+                </div>
             </header>
         `;
     }
@@ -31,9 +36,10 @@ class template2 extends HTMLElement{
 
 customElements.define('my-template2', template2);
 
-
-
-
 function redirectHom(){
     location.replace('home.html')
+}
+
+function redirectAbout(){
+    location.replace('about.html')
 }
