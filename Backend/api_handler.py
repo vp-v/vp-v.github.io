@@ -1,6 +1,7 @@
 # api_handler.py
 from flask import Flask, jsonify
 from database_manager import DatabaseManager
+import json
 
 app = Flask(__name__)
 
@@ -17,17 +18,21 @@ def get_data():
 
     result = db_manager.execute_query(query)
 
-    # Transforming result into json format
-    data = {}
+    data = []
     for row in result:
-        postcode = row['postcode']
-        data[postcode] = {
-            'name': row['name'],
-            'emissions': row['avg_emissions_per_customer_per_year']
-        }
+        postcode = row[0]
+        name = row[1]
+        emissions = round(row[2]/12)
 
-    print(result)
-    return jsonify(result)
+        data.append({
+            'postcode': postcode,
+            'name': name,
+            'emissions': emissions
+        })
+
+    result_json = json.dumps(data)
+    print(result_json)
+    return result_json
 
 if __name__ == '__main__':
     app.run()
