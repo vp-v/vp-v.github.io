@@ -4,7 +4,7 @@ let calculatedValue = urlParams.get("value");
 
 calculatedValue = Number(calculatedValue);
 calculatedValue = calculatedValue.toFixed(2);
-tree = calculatedValue*40;
+tree = calculatedValue*1.7;
 tree = tree.toFixed(2);
 
 // Display the calculated result on the page
@@ -15,11 +15,11 @@ let treeElement = document.getElementById("tree");
 treeElement.textContent = tree;
 
 let usage = document.getElementById("usage");
-if (calculatedValue <= 12) {
+if (calculatedValue <= 3) {
     usage.textContent = "Low usage";
     usage.style.color = "lightgreen";
 }
-else if (calculatedValue > 12 && calculatedValue <= 22) {
+else if (calculatedValue > 3 && calculatedValue <= 11) {
     usage.textContent = "Medium usage";
     usage.style.color = "lightyellow";
 }
