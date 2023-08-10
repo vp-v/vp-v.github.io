@@ -1,9 +1,11 @@
 # api_handler.py
 from flask import Flask, jsonify
 from database_manager import DatabaseManager
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 db_manager = DatabaseManager(
     host="onboarding-ta21.mysql.database.azure.com",
