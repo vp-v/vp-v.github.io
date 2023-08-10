@@ -10,6 +10,7 @@ class template extends HTMLElement{
             <link rel="stylesheet" href="../css/button.css">
             <link rel="stylesheet" href="../css/header.css">
             <link rel="stylesheet" href="../css/about.css">
+            <link rel="stylesheet" href="../css/tooltips.css">
         `;
     }
 }

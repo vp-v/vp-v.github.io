@@ -1,0 +1,17 @@
+.input-box{
+    position: relative;
+}
+
+#tooltip1, #tooltip2{
+    display: none;
+    position: absolute;
+    top: -10vw;
+    border-color: lightgray;
+    border-radius: 5vw;
+    padding: 1.5vw;
+    border-style: solid;
+    background-color: black;
+    font-family: 'Quicksand';
+    font-size: 1vw;
+    color: lightblue;
+}
