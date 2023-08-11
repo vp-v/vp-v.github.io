@@ -103,16 +103,18 @@ window.onload = function() {
     dropdown.addEventListener('change', function() {
         const selectedPostcode = dropdown.options[dropdown.selectedIndex].text;
 
-        fetch('http://127.0.0.1:5000/api/get_data').then(response => response.json()).then(data => {
-            let selectedData = data.find(item => item.postcode === selectedPostcode);
+        fetch('http://127.0.0.1:5000/api/get_data')
+            .then(response => response.json())
+            .then(data => {
+                let selectedData = data.find(item => item.postcode === selectedPostcode);
 
-            if (selectedData) {
-                let newData = [localStorage.getItem('calculatedValue'), selectedData.emissions];
-
-                myChart.data.labels[1] = selectedPostcode;
-                myChart.data.datasets[0].data = newData;
-                myChart.update();
-            }
-        });
+                if (selectedData) {
+                    let newData = [localStorage.getItem('calculatedValue'), selectedData.emissions];
+                    myChart.data.labels[1] = selectedData.name;
+                    myChart.data.datasets[0].data = newData;
+                    myChart.update();
+                }
+            });
     });
+
 };
