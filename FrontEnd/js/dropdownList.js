@@ -1,5 +1,5 @@
 function populateDropdownWithData() {
-    fetch('http://127.0.0.1:5000/api/get_data')
+    fetch('https://onboarding-ta21-3.azurewebsites.net/api/get_data')
         .then(response => response.json())
         .then(data => {
             const dropdown = document.getElementById('dropdown');
@@ -103,7 +103,7 @@ window.onload = function() {
     dropdown.addEventListener('change', function() {
         const selectedPostcode = dropdown.options[dropdown.selectedIndex].text;
 
-        fetch('http://127.0.0.1:5000/api/get_data')
+        fetch('https://onboarding-ta21-3.azurewebsites.net/api/get_data')
             .then(response => response.json())
             .then(data => {
                 let selectedData = data.find(item => item.postcode === selectedPostcode);
