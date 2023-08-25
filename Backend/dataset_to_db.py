@@ -60,7 +60,6 @@ def load_data_into_db(connection):
 		connection.commit()
 
 # mysql -h onboarding-ta21.mysql.database.azure.com -u lleyton -p
-# ta21-caseyemissions
 def main():
 	with connect(host = "onboarding-ta21.mysql.database.azure.com", user = "lleyton", password = getpass.getpass()) as connection:
 		print("Connected!")
